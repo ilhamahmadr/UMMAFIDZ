@@ -1,0 +1,3839 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<!-- SEO + Preview Sosmed -->
+<meta property="og:type" content="website">
+
+<meta property="og:title"
+content="Yayasan Ummafidz Amal Sejahtera">
+
+<meta property="og:description"
+content="Mendukung Program Makan Bergizi Gratis (MBG), distribusi makanan sehat, sosial, pendidikan dan kesejahteraan masyarakat.">
+
+<meta property="og:image"
+content="https://drive.google.com/uc?export=view&id=1n8rfmDH4wcl_gP6-r4E-DvGNqHweJDw8">
+
+<meta property="og:url"
+content="https://ilhamahmadr.github.io/UMMAFIDZ/">
+
+<meta property="og:site_name"
+content="Yayasan Ummafidz Amal Sejahtera">
+
+
+<!-- Untuk WhatsApp -->
+<meta property="og:image:width"
+content="1200">
+
+<meta property="og:image:height"
+content="630">
+
+
+<!-- Twitter/X -->
+<meta name="twitter:card"
+content="summary_large_image">
+
+<meta name="twitter:title"
+content="Yayasan Ummafidz Amal Sejahtera">
+
+<meta name="twitter:description"
+content="Program MBG, distribusi makanan bergizi, pendidikan dan sosial.">
+
+<meta name="twitter:image"
+content="https://drive.google.com/uc?export=view&id=1n8rfmDH4wcl_gP6-r4E-DvGNqHweJDw8">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yayasan Ummafidz Amal Sejahtera</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* TICKER MLAKU */
+.ticker-wrap{
+overflow:hidden;
+flex:1;
+white-space:nowrap;
+}
+
+.ticker{
+display:inline-flex;
+align-items:center;
+gap:80px;
+
+animation:
+tickerMove
+25s linear infinite;
+}
+
+.ticker span{
+color:#fff;
+font-size:15px;
+font-weight:600;
+white-space:nowrap;
+}
+
+@keyframes tickerMove{
+
+0%{
+transform:
+translateX(0);
+}
+
+100%{
+transform:
+translateX(-50%);
+}
+
+}
+
+.gallery img{
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+.gallery img:hover{
+
+transform:
+scale(
+1.05
+);
+
+}
+
+.news-slider{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:24px;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.25);
+
+}
+
+
+.news-track{
+display:flex;
+transition:
+transform .8s ease-out;
+touch-action:pan-y;
+cursor:grab;
+}
+
+
+.news-item{
+
+min-width:100%;
+
+position:relative;
+
+height:500px;
+
+text-decoration:none;
+
+color:white;
+
+overflow:hidden;
+
+}
+
+
+.news-item img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+
+.news-item:hover img{
+
+transform:
+scale(1.06);
+
+}
+
+
+
+.news-content{
+
+position:absolute;
+
+bottom:0;
+left:0;
+
+padding:35px;
+
+width:100%;
+
+background:
+linear-gradient(
+transparent,
+rgba(0,0,0,.92)
+);
+
+}
+
+
+
+.news-tag{
+
+background:
+linear-gradient(
+135deg,
+#ff9800,
+#ff6b00
+);
+
+padding:
+6px 12px;
+
+border-radius:
+50px;
+
+font-size:
+13px;
+
+font-weight:
+700;
+
+display:inline-block;
+
+margin-bottom:
+15px;
+
+}
+
+
+
+.news-content h3{
+
+font-size:
+32px;
+
+font-weight:
+800;
+
+margin-bottom:
+12px;
+
+}
+
+
+
+.news-content p{
+
+color:#ddd;
+
+}
+
+
+
+.news-btn{
+
+position:absolute;
+
+top:50%;
+
+transform:
+translateY(-50%);
+
+width:50px;
+height:50px;
+
+border:none;
+
+background:
+rgba(0,0,0,.4);
+
+backdrop-filter:
+blur(10px);
+
+color:white;
+
+border-radius:50%;
+
+cursor:pointer;
+
+z-index:10;
+
+font-size:22px;
+
+}
+
+
+
+.news-btn:hover{
+
+background:#ff9800;
+
+}
+
+
+.prev{
+
+left:15px;
+
+}
+
+
+.next{
+
+right:15px;
+
+}
+
+
+
+.news-dots{
+
+position:absolute;
+
+bottom:20px;
+
+right:25px;
+
+display:flex;
+
+gap:8px;
+
+}
+
+
+.news-dot{
+
+width:12px;
+height:12px;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,.4);
+
+cursor:pointer;
+
+}
+
+
+.news-dot.active{
+
+background:#ff9800;
+
+}
+
+
+@media(max-width:768px){
+
+.news-item{
+
+height:280px;
+
+}
+
+
+.news-content{
+
+padding:20px;
+
+}
+
+
+.news-content h3{
+
+font-size:22px;
+
+}
+
+
+.news-btn{
+
+display:none;
+
+}
+
+}
+
+/*
+HEADER
+*/
+
+#statistik .card:hover{
+
+transform:
+translateY(-8px)
+scale(1.04);
+
+}
+
+.social-icon{
+width:38px;
+height:38px;
+
+background:
+rgba(255,255,255,.08);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+backdrop-filter:
+blur(10px);
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+transition:.3s;
+}
+
+.social-icon:hover{
+
+background:
+linear-gradient(
+135deg,
+#ff9800,
+#ff6b00
+);
+
+transform:
+translateY(-3px);
+
+}
+
+.hero{
+
+height:85vh;
+
+position:relative;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+background:
+
+linear-gradient(
+rgba(5,20,50,.72),
+rgba(5,20,50,.75)
+),
+
+url(
+'https://png.pngtree.com/background/20230408/original/pngtree-beautiful-mountain-view-picture-image_2335720.jpg'
+);
+
+background-size:cover;
+background-position:center;
+
+overflow:hidden;
+}
+
+
+.overlay{
+
+position:absolute;
+inset:0;
+
+backdrop-filter:
+blur(2px);
+
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,.1),
+rgba(0,0,0,.35)
+);
+
+}
+
+
+.hero-content{
+
+position:relative;
+z-index:2;
+
+max-width:
+850px;
+
+padding:
+20px;
+
+}
+
+
+.hero-logo{
+
+width:
+130px;
+
+margin-bottom:
+20px;
+
+filter:
+drop-shadow(
+0 10px 25px
+rgba(0,0,0,.4)
+);
+
+}
+
+
+.hero h1{
+
+font-size:
+clamp(
+36px,
+6vw,
+70px
+);
+
+font-weight:
+800;
+
+color:
+#ffb347;
+
+margin-bottom:
+5px;
+
+}
+
+
+.hero h2{
+
+font-size:
+clamp(
+22px,
+4vw,
+42px
+);
+
+font-weight:
+700;
+
+margin-bottom:
+20px;
+
+}
+
+
+.hero p{
+
+max-width:
+700px;
+
+margin:
+auto;
+
+color:
+#dbeafe;
+
+font-size:
+18px;
+
+margin-bottom:
+30px;
+
+}
+
+
+.hero .btn{
+
+margin-top:
+0;
+
+}
+
+
+/* ======================
+CONTAINER
+====================== */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* GRID */
+.grid-2{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.grid-3{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.grid-4{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+
+/* ======================
+GALERI BARU
+====================== */
+
+
+.gallery img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+
+border-radius:16px;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.02);
+}
+
+@media(max-width:768px){
+
+.gallery{
+
+grid-template-columns:
+1fr;
+
+}
+
+}
+
+.gallery{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:16px;
+transition:.3s;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:16px;
+transition:.3s;
+border:2px solid rgba(255,255,255,.08);
+}
+
+
+.gallery img:hover{
+
+    transform:
+    scale(1.03);
+
+    border-color:
+    #ff9800;
+
+    box-shadow:
+    0 12px 30px
+    rgba(255,140,0,.2);
+}
+
+
+/* MOBILE */
+@media(max-width:768px){
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+
+
+}
+
+
+/* ======================
+FOOTER RAPI
+====================== */
+
+footer{
+
+padding:
+60px 20px;
+
+text-align:center;
+
+}
+
+
+.footer-inner{
+
+max-width:
+900px;
+
+margin:auto;
+
+}
+
+
+.footer-logo img{
+
+display:block;
+
+margin:
+0 auto 18px;
+
+width:
+90px;
+
+height:auto;
+
+object-fit:
+contain;
+
+}
+
+
+.footer-text{
+
+color:
+#dbeafe;
+
+margin:
+8px 0;
+
+font-size:
+15px;
+
+line-height:
+1.8;
+
+}
+
+
+/* SOCIAL ICON */
+.social-icon{
+
+width:40px;
+height:40px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,.08);
+
+color:#fff;
+
+transition:.3s;
+}
+
+.social-icon:hover{
+
+background:#ff9800;
+
+transform:
+translateY(-3px);
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* =========================
+WARNA UTAMA WEBSITE
+KOMBINASI BIRU + ORANGE PREMIUM
+========================= */
+
+body{
+    font-family:'Inter','Poppins',sans-serif;
+
+    /* BACKGROUND UTAMA */
+    background:
+    linear-gradient(
+        180deg,
+        #0f172a 0%,
+        #132238 35%,
+        #1d3557 70%,
+        #234a75 100%
+    );
+
+    color:#ffffff;
+    line-height:1.7;
+    font-size:15px;
+    font-weight:400;
+    letter-spacing:-0.01em;
+}
+
+/* SECTION */
+.section{
+    padding:80px 0;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(15,23,42,0.95),
+        rgba(29,53,87,0.96)
+    );
+}
+
+/* EFEK GLOW */
+.section::before{
+    content:'';
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(255,140,0,.16),
+    transparent 35%),
+
+    radial-gradient(circle at bottom left,
+    rgba(59,130,246,.14),
+    transparent 30%);
+
+    pointer-events:none;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(14px);
+
+    border-radius:22px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.22);
+
+    padding:30px;
+
+    transition:.35s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(255,166,0,.4);
+
+    box-shadow:
+        0 15px 40px rgba(255,140,0,.15);
+}
+
+/* NAVBAR */
+
+.nav{
+    background:
+    linear-gradient(
+        90deg,
+        #0f172a,
+        #1d3557
+    );
+
+    border-top:3px solid #ff9800;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.25);
+}
+
+/* TOPBAR */
+#topbar-clock{
+    background:
+    linear-gradient(
+        90deg,
+        #0f172a,
+        #1e3a5f
+    ) !important;
+}
+
+/* TITLE */
+.section-title{
+    font-family:'Poppins',sans-serif;
+
+    font-size:38px;
+
+    font-weight:800;
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+    color:#ffffff;
+
+    letter-spacing:-0.03em;
+
+    position:relative;
+}
+
+.section-title::after{
+    content:'';
+
+    width:90px;
+    height:5px;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff9800,
+        #ffcc70
+    );
+
+    display:block;
+
+    margin:16px auto 0;
+}
+
+/* SUBTITLE */
+.section-subtitle{
+    text-align:center;
+    color:#dbeafe;
+    max-width:800px;
+    margin:0 auto 45px;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+
+    margin-top:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff9800,
+        #ff6b00
+    );
+
+    color:#fff;
+
+    padding:15px 32px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+    box-shadow:
+        0 10px 25px rgba(255,140,0,.25);
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.02);
+
+    box-shadow:
+        0 14px 35px rgba(255,140,0,.35);
+}
+
+/* MENU HOVER */
+.nav a:hover,
+.nav a.active{
+    background:
+    linear-gradient(
+        135deg,
+        #ff9800,
+        #ff6b00
+    );
+
+    color:#fff;
+}
+
+/* TICKER LABEL */
+.ticker-label{
+    background:
+    linear-gradient(
+        135deg,
+        #ff9800,
+        #ff6b00
+    ) !important;
+}
+
+/* SOCIAL ICON */
+.social-icon{
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.25);
+}
+
+/* FOOTER */
+footer{
+    background:
+    linear-gradient(
+        180deg,
+        #0b1220,
+        #132238
+    );
+
+    border-top:2px solid rgba(255,140,0,.3);
+}
+
+/* ANGKA STATISTIK */
+.text-blue-600,
+.text-blue-700,
+.text-blue-800{
+    color:#ffb347 !important;
+}
+
+/* GALERI */
+.gallery img{
+    border:2px solid rgba(255,255,255,.08);
+}
+
+.gallery img:hover{
+    transform:scale(1.04);
+
+    border-color:#ff9800;
+
+    box-shadow:
+        0 12px 30px rgba(255,140,0,.2);
+}
+
+</style>
+</head>
+<body>
+
+<div id="halamanUtama">
+
+<!-- HEADER DENGAN FOTO BACKGROUND -->
+<!-- =========================
+HEADER + TOPBAR + NAVIGATION
+Ganti seluruh bagian HEADER dan NAVIGASI Anda dengan kode ini
+========================= -->
+
+<!-- TOPBAR JAM -->
+<div id="topbar-clock" style="
+    background:#1f326b;
+    color:#fcf9f9;
+    height:48px;
+    display:flex;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    font-weight:500;
+    
+">
+    <div class="container" style="
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    ">
+        <div id="liveDateTime">
+            Rabu, 20 Mei 2026 | 05:46:23
+        </div>
+        
+    </div>
+    
+</div>
+
+<header id="home" style="
+border-top:3px solid #07011d;
+position:relative;
+width:100%;
+
+/* DIPERSEMPIT */
+height:
+clamp(
+180px,
+28vh,
+300px
+);
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+
+background:
+linear-gradient(
+rgba(0,0,0,.25),
+rgba(0,0,0,.25)
+),
+
+url('https://media.istockphoto.com/id/1393120930/id/foto/latar-belakang-teknologi-abstrak-dengan-garis-neon-bersinar-pada-hitam.jpg?s=612x612&w=0&k=20&c=PmqLifMr7WrrY3TrG4FP1c9xTauIfoAooKqwwGyPPMU=');
+
+background-size:cover;
+background-position:center;
+">
+
+    <!-- overlay -->
+    <div style="
+        position:absolute;
+        inset:0;
+        backdrop-filter:blur(2px);
+    "></div>
+
+    <!-- CONTENT CENTER -->
+    <div style="
+        position:relative;
+        z-index:2;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+    ">
+
+        <!-- LOGO CENTER -->
+        <img
+            src="https://cdn.corenexis.com/files/c/6589177720.png"
+            alt="Logo"
+            style="
+                width:90px;
+                height:90px;
+                object-fit:contain;
+                filter:drop-shadow(0 10px 25px rgba(0,0,0,.45));
+                margin-bottom:6px;
+            "
+        >
+
+        <!-- JUDUL (MEPET) -->
+        <h1 style="
+            font-family:'Poppins',sans-serif;
+            font-size:clamp(20px, 3vw, 30px);
+            font-weight:800;
+            color:#ffa125;
+            line-height:1.05;
+            margin:0;
+            text-shadow:0 8px 25px rgba(0,0,0,.45);
+        ">
+            YAYASAN UMMAFIDZ
+        </h1>
+
+        <!-- SUBJUDUL (MEPET) -->
+        <div style="
+            font-family:'Poppins',sans-serif;
+            font-size:clamp(10px, 2vw, 20px);
+            font-weight:700;
+            color:#ffffff;
+            line-height:1.05;
+            margin-top:2px;
+            text-shadow:0 6px 20px rgba(0,0,0,.45);
+        ">
+            >AMAL SEJAHTERA<
+        </div>
+
+    </div>
+</header>
+
+<!-- NAVIGASI STICKY -->
+<nav class="nav" style="
+    background:#1f326b;
+    position:sticky;
+    top:0;
+    z-index:9999;
+    box-shadow:0 6px 20px rgba(0,0,0,.15);
+    border-top:3px solid #010541;
+">
+
+    <!-- BAR MENU -->
+    <div class="container" style="
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        height:58px;
+    ">
+
+        <!-- Tombol Sidebar -->
+        <button onclick="toggleMobileMenu()" style="
+            width:58px;
+            height:58px;
+            background:transparent;
+            border:none;
+            color:#fff;
+            font-size:28px;
+            cursor:pointer;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        ">
+            ☰
+        </button>
+
+        <!-- Nama Mini -->
+        <div style="
+            color:#fff;
+            font-weight:700;
+            font-size:16px;
+            font-family:'Poppins',sans-serif;
+            flex:1;
+            padding-left:10px;
+        ">
+            Yayasan Ummafidz
+        </div>
+
+        <!-- Social Media -->
+            <div style="display:flex; align-items:center; gap:8px;">
+            <a href="#"
+            onclick="bukaWA()"
+            class="social-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@usernameanda"
+            target="_blank"
+            class="social-icon">
+            <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="https://instagram.com/usernameanda"
+            target="_blank"
+            class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://facebook.com/usernameanda"
+            target="_blank"
+            class="social-icon">
+            <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://x.com/usernameanda"
+            target="_blank"
+            class="social-icon">
+            <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            </div>
+        </div>
+
+
+<!-- TICKER BERITA -->
+<div style="
+display:flex;
+align-items:center;
+height:50px;
+
+background:
+linear-gradient(
+90deg,
+#0f172a,
+#132238,
+#1d3557
+);
+
+overflow:hidden;
+
+border-top:
+1px solid rgba(255,255,255,.08);
+
+border-bottom:
+1px solid rgba(255,255,255,.08);
+">
+
+<!-- LABEL -->
+<div style="
+background:
+linear-gradient(
+135deg,
+#ff9800,
+#ff6b00
+);
+
+height:100%;
+width:120px; /* Lebar disesuaikan agar teks bernapas */
+
+display:flex;
+align-items:center;
+justify-content:flex-start; /* Menggeser acuan teks ke kiri */
+padding-left:40px;          /* Memposisikan teks pas di tengah area oranye bersih */
+
+font-weight:800;
+font-size:14px;
+
+font-family:Poppins;
+color:white;
+
+flex-shrink:0;
+
+clip-path:
+polygon(
+0 0,
+100% 0%,
+100% 50%,
+100% 100%,
+0 100%
+);
+">
+
+ INFO
+
+</div>
+
+
+<!-- MARQUEE -->
+<div class="ticker-wrap">
+
+<div class="ticker">
+
+<span>
+• Yayasan Ummafidz Amal Sejahtera mendukung Program Makan Bergizi Gratis Nasional |
+• Distribusi makanan sehat, halal & bergizi untuk anak Indonesia |
+• Bersama membangun generasi sehat, cerdas, dan berakhlak |
+• Transparansi | • Profesional | • Amanah |
+</span>
+
+<span>
+• Yayasan Ummafidz Amal Sejahtera mendukung Program Makan Bergizi Gratis Nasional |
+• Distribusi makanan sehat, halal & bergizi untuk anak Indonesia |
+• Bersama membangun generasi sehat, cerdas, dan berakhlak |
+• Transparansi | • Profesional | • Amanah |
+</span>
+
+</div>
+
+</div>
+</nav>
+
+<!-- SCRIPT JAM OTOMATIS -->
+<script>
+function updateDateTime() {
+    const now = new Date();
+
+    const hari = [
+        "Minggu","Senin","Selasa","Rabu",
+        "Kamis","Jumat","Sabtu"
+    ];
+
+    const bulan = [
+        "Januari","Februari","Maret","April","Mei","Juni",
+        "Juli","Agustus","September","Oktober","November","Desember"
+    ];
+
+    const day = hari[now.getDay()];
+    const date = now.getDate();
+    const month = bulan[now.getMonth()];
+    const year = now.getFullYear();
+
+    const hours = String(now.getHours()).padStart(2,'0');
+    const minutes = String(now.getMinutes()).padStart(2,'0');
+    const seconds = String(now.getSeconds()).padStart(2,'0');
+
+    document.getElementById("liveDateTime").innerHTML =
+        `${day}, ${date} ${month} ${year} | ` +
+        `<span style="
+            background:#2563eb;
+            color:#fff;
+            padding:2px 8px;
+            border-radius:4px;
+            font-weight:700;
+            margin-left:6px;
+        ">${hours}:${minutes}:${seconds}</span>`;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+
+<!-- OVERLAY -->
+<div id="mobileOverlay" onclick="closeMobileMenu()" style="
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    z-index:9998;
+    opacity:0;
+    visibility:hidden;
+    transition:0.3s;
+"></div>
+
+<!-- SIDEBAR MENU -->
+<div id="mobileMenu" style="
+    position:fixed;
+    top:0;
+    left:0;
+    width:280px;
+    height:100%;
+    background:#0f172a;
+    z-index:9999;
+    transform:translateX(-100%);
+    transition:0.35s ease;
+    box-shadow:5px 0 25px rgba(0,0,0,.35);
+    overflow-y:auto;
+">
+
+    <!-- HEADER MENU -->
+    <div style="
+        height:70px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:0 20px;
+        border-bottom:1px solid rgba(255,255,255,0.08);
+        color:#fff;
+        font-weight:800;
+        font-size:18px;
+    ">
+        Menu
+        <button onclick="closeMobileMenu()" style="
+            background:none;
+            border:none;
+            color:#fff;
+            font-size:28px;
+            cursor:pointer;
+        ">×</button>
+    </div>
+
+    <!-- ITEM MENU -->
+    <a href="#home"onclick="closeMobileMenu()"style="display:block; padding:16px 22px; color:#fff; border-bottom:1px solid rgba(255,255,255,0.05);">Home</a>
+    <a href="#tentang" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Tentang Kami</a>
+    <a href="#visi-misi" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Visi & Misi</a>
+    <a href="#legalitas" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Legalitas</a>
+    <a href="#struktur" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Struktur Organisasi</a>
+    <a href="#program" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Program MBG</a>
+    <a href="#statistik" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Statistik</a>
+    <a href="#galeri1" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Galeri kegiatan</a>
+    <a href="#galeri2" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Galeri Menu</a>
+    <a href="#testimoni" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Testimoni</a>
+    <a href="#faq" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">FAQ</a>
+    <a href="#mitra" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Mitra</a>
+    <a href="#berita" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Berita</a>
+    <a href="#kontak" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Kontak</a>
+    <a href="#maps" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;">Lokasi</a>
+</div>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('mobileOverlay');
+
+    if (menu.style.transform === 'translateX(0px)') {
+        closeMobileMenu();
+    } else {
+        menu.style.transform = 'translateX(0)';
+        overlay.style.opacity = '1';
+        overlay.style.visibility = 'visible';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('mobileOverlay');
+
+    menu.style.transform = 'translateX(-100%)';
+    overlay.style.opacity = '0';
+    overlay.style.visibility = 'hidden';
+    document.body.style.overflow = '';
+}
+</script>
+
+<!-- BERITA -->
+<section id="berita" class="section">
+<div class="container">
+<h2 class="section-title">
+Berita Populer
+</h2>
+<p class="section-subtitle">
+Berita dan informasi yang paling banyak mendapat perhatian terbaru
+</p>
+<div class="news-slider">
+<div class="news-track" id="newsTrack">
+
+<!-- BERITA 1 -->
+<a href="https://contohwebsite.com/berita-mbg"
+target="_blank"
+class="news-item">
+<img src="https://picsum.photos/1000/500?1">
+<div class="news-content">
+<span class="news-tag">
+Program MBG
+</span>
+<h3>
+Distribusi makanan bergizi di Gunungkidul
+</h3>
+<p>
+Penyaluran makanan sehat untuk penerima manfaat.
+</p>
+</div>
+</a>
+
+<!-- BERITA 2 -->
+<a href="https://contohwebsite.com/berita-sosial"
+target="_blank"
+class="news-item">
+<img src="https://picsum.photos/1000/500?2">
+<div class="news-content">
+<span class="news-tag">
+Sosial
+</span>
+<h3>
+Kegiatan bakti sosial yayasan
+</h3>
+<p>
+Program bantuan masyarakat sekitar.
+</p>
+</div>
+</a>
+
+<!-- BERITA 3 -->
+<a href="https://contohwebsite.com/berita-pendidikan"
+target="_blank"
+class="news-item">
+<img src="https://picsum.photos/1000/500?3">
+<div class="news-content">
+<span class="news-tag">
+Pendidikan
+</span>
+<h3>
+Program pendidikan anak
+</h3>
+<p>
+Peningkatan kualitas pendidikan.
+</p>
+</div>
+</a>
+
+<!-- BERITA 4 -->
+<a href="https://contohwebsite.com/berita-kesehatan"
+target="_blank"
+class="news-item">
+<img src="https://picsum.photos/1000/500?4">
+<div class="news-content">
+<span class="news-tag">
+Kesehatan
+</span>
+<h3>
+Pemeriksaan kesehatan gratis
+</h3>
+<p>
+Program kesehatan masyarakat.
+</p>
+</div>
+</a>
+
+<!-- BERITA 5 -->
+<a href="https://contohwebsite.com/berita-kesehatan"
+target="_blank"
+class="news-item">
+<img src="https://picsum.photos/1000/500?4">
+<div class="news-content">
+<span class="news-tag">
+Kesehatan
+</span>
+<h3>
+Pemeriksaan kesehatan gratis
+</h3>
+<p>
+Program kesehatan masyarakat.
+</p>
+</div>
+
+
+</a>
+</div>
+<button class="news-btn prev"
+onclick="geserBerita(-1)">
+❮
+</button>
+<button class="news-btn next"
+onclick="geserBerita(1)">
+❯
+</button>
+<div
+id="newsDots"
+class="news-dots">
+</div>
+</div>
+</div>
+</section>
+
+<!-- VISI MISI -->
+<section id="visi-misi" class="section">
+<div class="container">
+<h2 class="section-title">
+Visi & Misi
+</h2>
+<p class="section-subtitle">
+Landasan dan komitmen Yayasan Ummafidz Amal Sejahtera
+dalam mendukung kesejahteraan masyarakat.
+</p>
+<div class="grid-2">
+
+<!-- VISI -->
+<div class="card">
+<div style="
+font-size:50px;
+margin-bottom:15px;
+">
+🎯
+</div>
+<h3 style="
+font-size:28px;
+font-weight:700;
+color:#fff;
+margin-bottom:15px;
+">
+
+Visi
+</h3>
+<p style="
+color:#dbeafe;
+line-height:1.9;
+">
+Menjadi yayasan terpercaya dalam mewujudkan
+generasi yang sehat, cerdas, mandiri,
+dan berakhlak mulia melalui program sosial,
+pendidikan, serta kesejahteraan masyarakat.
+</p>
+</div>
+
+<!-- MISI -->
+<div class="card">
+<div style="
+font-size:50px;
+margin-bottom:15px;
+">
+🚀
+</div>
+<h3 style="
+font-size:28px;
+font-weight:700;
+color:#fff;
+margin-bottom:15px;
+">
+Misi
+</h3>
+<ul style="
+color:#dbeafe;
+line-height:2;
+padding-left:20px;
+list-style:disc;
+">
+<li>
+Mendukung Program Makan Bergizi Gratis (MBG).
+</li>
+<li>
+Meningkatkan kualitas gizi dan kesejahteraan anak Indonesia.
+</li>
+<li>
+Membangun kemitraan strategis dengan berbagai pihak.
+</li>
+<li>
+Mengedepankan transparansi, profesionalisme, dan amanah.
+</li>
+<li>
+Mendorong kegiatan sosial, pendidikan, dan pemberdayaan masyarakat.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- LEGALITAS -->
+<section id="legalitas" class="section">
+<div class="container">
+<h2 class="section-title">
+Legalitas Yayasan
+</h2>
+<div class="grid-3">
+<a href="https://contoh-link1.com"
+target="_blank"
+class="card text-center"><h3 class="font-bold text-xl mb-2">Akta Notaris</h3><p>Nomor Akta Yayasan</p></a>
+<a href="https://contoh-link2.com"
+target="_blank"
+class="card text-center"><h3 class="font-bold text-xl mb-2">SK Kemenkumham</h3><p>Nomor Pengesahan</p></a>
+<a href="https://contoh-link3.com"
+target="_blank"
+class="card text-center"><h3 class="font-bold text-xl mb-2">NPWP & NIB</h3><p>Data Legal Yayasan</p></a></div>
+</div>
+</section>
+
+
+<!-- STRUKTUR ORGANISASI -->
+<section id="struktur" class="section">
+    <div class="container">
+        <h2 class="section-title">
+            Struktur Organisasi
+        </h2>
+        <div class="grid-3">
+            <a href="https://contoh-link.com"
+               target="_blank"
+               class="card text-center">
+               Lihat Struktur Organisasi
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- STATISTIK -->
+<section id="statistik" class="section">
+<div class="container">
+<h2 class="section-title">
+Statistik Program
+</h2>
+<div class="grid-4">
+<div class="card text-center">
+<h3
+class="counter text-4xl font-bold text-blue-600"
+data-target="10000">
+0
+</h3>
+<p>
+Penerima Manfaat
+</p>
+</div>
+
+<div class="card text-center">
+<h3
+class="counter text-4xl font-bold text-blue-600"
+data-target="25">
+0
+</h3>
+
+<p>
+Sekolah Mitra
+</p>
+</div>
+
+<div class="card text-center">
+<h3
+class="counter text-4xl font-bold text-blue-600"
+data-target="120">
+
+0
+
+</h3>
+
+<p>
+Relawan
+</p>
+
+</div>
+
+
+<div class="card text-center">
+
+<h3
+class="counter text-4xl font-bold text-blue-600"
+data-target="365">
+
+0
+
+</h3>
+
+<p>
+Hari Distribusi
+</p>
+
+</div>
+
+
+</div>
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Transparansi
+</h2>
+
+<div class="grid-3">
+
+<div class="card">
+Laporan kegiatan
+</div>
+
+<div class="card">
+Laporan distribusi
+</div>
+
+<div class="card">
+Laporan keuangan
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- GALERI -->
+
+<section id="testimoni" class="section">
+    <div class="container">
+        <h2 class="section-title">Testimoni</h2>
+        <div class="grid-3">
+            <div class="card">“Program ini sangat membantu anak-anak kami.”</div>
+            <div class="card">“Menu bergizi dan distribusi tepat waktu.”</div>
+            <div class="card">“Yayasan yang profesional dan amanah.”</div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section bg-white">
+    <div class="container">
+        <h2 class="section-title">Pertanyaan Umum (FAQ)</h2>
+        <div class="card space-y-6">
+            <div>
+                <h3 class="font-bold">Apa itu Program MBG?</h3>
+                <p>Program Makan Bergizi Gratis untuk mendukung pemenuhan gizi anak Indonesia.</p>
+            </div>
+            <div>
+                <h3 class="font-bold">Siapa penerima manfaat?</h3>
+                <p>Anak sekolah dan kelompok sasaran yang ditetapkan pemerintah.</p>
+            </div>
+            <div>
+                <p>Anda dapat menghubungi kami melalui WhatsApp atau transfer bank.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MITRA -->
+<section id="mitra" class="section">
+    <div class="container">
+        <h2 class="section-title">Mitra Kerja</h2>
+        <div class="grid-4">
+            <div class="card text-center">BGN</div>
+            <div class="card text-center">Pemerintah</div>
+            <div class="card text-center">Penerima Manfaat</div>
+            <div class="card text-center">Suplayer</div>
+        </div>
+    </div>
+</section>
+
+<!-- PROGRAM -->
+<section id="program" class="section bg-white">
+    <div class="container">
+        <h2 class="section-title">Program MBG</h2>
+        <p class="section-subtitle">
+            Kegiatan utama yayasan dalam mendukung pemenuhan gizi seimbang.
+        </p>
+
+        <div class="grid-3">
+            <div class="card text-center">
+                <div class="text-5xl mb-4">🥗</div>
+                <h3 class="text-xl font-bold mb-2">Penyusunan Menu Gizi</h3>
+                <p>Menu sehat disusun sesuai standar kebutuhan gizi anak.</p>
+            </div>
+
+            <div class="card text-center">
+                <div class="text-5xl mb-4">🍱</div>
+                <h3 class="text-xl font-bold mb-2">Distribusi Makanan</h3>
+                <p>Makanan bergizi disalurkan ke penerima manfaat.</p>
+            </div>
+
+            <div class="card text-center">
+                <div class="text-5xl mb-4">📊</div>
+                <h3 class="text-xl font-bold mb-2">Monitoring & Evaluasi</h3>
+                <p>Pengawasan mutu dan pelaporan program secara berkala.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+GALERI KEGIATAN (SAMPLE)
+========================= -->
+
+<section id="galeri1" class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Galeri Kegiatan
+
+</h2>
+
+<p class="section-subtitle">
+
+Dokumentasi kegiatan Yayasan
+
+</p>
+
+
+<!-- GALERI KEGIATAN SEMPEL -->
+
+<div class="gallery">
+<img
+src="https://picsum.photos/700/500?1">
+<img
+src="https://picsum.photos/700/500?2">
+<img
+src="https://picsum.photos/700/500?3">
+</div>
+
+<!-- TOMBOL -->
+<div style="
+text-align:center;
+margin-top:30px;
+">
+
+<button
+onclick="bukaGaleriKegiatan()"
+class="btn">
+📸 Lihat Foto Lainnya
+</button>
+</div>
+</div>
+</section>
+
+<!-- =========================
+GALERI MENU MBG (SAMPLE)
+========================= -->
+<section id="galeri2" class="section">
+<div class="container">
+<h2 class="section-title">
+Galeri Menu MBG
+</h2>
+
+<p class="section-subtitle">
+Dokumentasi Menu Makanan Bergizi Gratis
+</p>
+
+<div class="gallery">
+
+<img src="https://picsum.photos/700/500?31">
+
+<img src="https://picsum.photos/700/500?32">
+
+<img src="https://picsum.photos/700/500?33">
+
+</div>
+<div style="
+text-align:center;
+margin-top:30px;
+">
+
+<button
+onclick="bukaGaleriMenu()"
+class="btn">
+🍱 Lihat Foto Lainnya
+</button>
+</div>
+</div>
+</section>
+
+<!-- PROGRES -->
+<section id="progres" class="section">
+<div class="container">
+<h2 class="section-title">
+Progres Dapur SPPG
+</h2>
+<div class="grid-2">
+
+
+<div
+onclick="bukaHalaman('foto')"
+class="card text-center"
+style="cursor:pointer;">
+
+<div style="
+font-size:50px;
+margin-bottom:15px;">
+📸
+</div>
+<h3 class="font-bold text-xl mb-2">
+Dokumentasi Pembangunan Dapur SPPG
+</h3>
+<p>
+Lihat Foto Progres
+</p>
+</div>
+
+
+<div
+onclick="bukaHalaman('video')"
+class="card text-center"
+style="cursor:pointer;">
+
+<div style="
+font-size:50px;
+margin-bottom:15px;">
+🎥
+
+</div>
+<h3 class="font-bold text-xl mb-2">
+Dokumentasi Pembangunan Dapur SPPG
+</h3>
+<p>
+Lihat Video Progres
+</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- KONTAK -->
+<section id="kontak" class="section bg-white">
+    <div class="container">
+        <h2 class="section-title">Kontak Kami</h2>
+
+        <div class="card max-w-4xl mx-auto">
+            <p><strong>Nama Yayasan:</strong> Yayasan Ummafidz Amal Sejahtera</p>
+            <p><strong>Alamat:</strong> Jl. Siraman-Pulutan No. 2, Desa Siraman, Kecamatan Wonosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta</p>
+            <p><strong>Telepon:</strong> +62-82324130707</p>
+            <p><strong>Email:</strong> yayasan@uas.ac.id, ummafidz70@gmail.com</p>
+        </div>
+    </div>
+</section>
+
+<!-- TENTANG KAMI -->
+<section id="tentang"class="section">
+    <div class="container">
+        <h2 class="section-title">Tentang Kami</h2>
+        <div class="card">
+            <p>
+                Yayasan Ummafidz Amal Sejahtera adalah lembaga sosial yang bergerak di bidang
+                pendidikan, kesehatan, dan kesejahteraan masyarakat, serta mendukung penuh
+                Program Makan Bergizi Gratis (MBG).
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+
+<img
+src="https://cdn.corenexis.com/files/c/6589177720.png"
+style="
+width:80px;
+display:block;
+margin:auto;
+">
+
+<h3 style="
+margin-top:15px;
+font-size:26px;
+font-weight:700;
+">
+Yayasan Ummafidz Amal Sejahtera
+</h3>
+
+<p>
+Jl. Siraman-Pulutan No 2,
+Gunungkidul, DIY
+</p>
+
+<p>
+ummafidz70@gmail.com, yayasan@uas.ac.id
+</p>
+
+<p>
+082324130707
+</p>
+
+<div style="
+margin-top:20px;
+opacity:.7;
+">
+
+<div style="
+display:flex;
+justify-content:center;
+gap:12px;
+margin:25px 0;
+">
+
+<a href="#"
+onclick="bukaWA()"
+class="social-icon">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a href="#" class="social-icon">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#" class="social-icon">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+
+<a href="#" class="social-icon">
+<i class="fa-brands fa-facebook"></i>
+</a>
+
+<a href="#" class="social-icon">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
+
+</div>
+
+© 2026 All Rights Reserved
+
+</div>
+
+</div>
+
+</footer>
+</div>
+
+<!-- ==========================
+HALAMAN VIDEO PILIH LOKASI
+========================== -->
+<section
+id="halamanVideo"
+class="section"
+style="display:none;min-height:100vh;">
+
+<div class="container">
+
+<button
+onclick="kembali()"
+class="btn">
+
+← Kembali
+
+</button>
+
+
+<h2 class="section-title">
+🎥 Pilih Lokasi Video SPPG
+</h2>
+
+
+<div class="grid-2">
+
+<div class="card"
+onclick="bukaVideoLokasi('kebumen')">
+
+Video SPPG Kebumen
+
+</div>
+
+
+<div class="card"
+onclick="bukaVideoLokasi('grogol')">
+
+Video SPPG Grogol
+
+</div>
+
+
+<div class="card"
+onclick="bukaVideoLokasi('wonosari')">
+
+Video SPPG Wonosari
+
+</div>
+
+<div class="card"
+onclick="bukaVideoLokasi('logandeng')">
+
+Video SPPG logandeng
+
+</div>
+
+<div class="card"
+onclick="bukaVideoLokasi('karangmojo')">
+
+Video SPPG Karangmojo
+
+</div>
+
+
+<div class="card"
+onclick="bukaVideoLokasi('ponjong')">
+
+Video SPPG Ponjong
+
+</div>
+
+
+<div class="card"
+onclick="bukaVideoLokasi('semanu')">
+
+Video SPPG Semanu
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================
+HALAMAN DAFTAR VIDEO
+======================= -->
+
+<section
+id="halamanVideoLokasi"
+class="section"
+style="display:none;">
+
+<div class="container">
+
+<button
+onclick="kembaliVideoLokasi()"
+class="btn">
+
+← Kembali
+
+</button>
+
+
+<h2
+id="judulVideo"
+class="section-title">
+
+Video Lokasi
+
+</h2>
+
+
+<div
+id="listVideo"
+
+style="
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+">
+
+</div>
+
+
+<iframe
+id="playerVideo"
+style="
+display:none;
+width:100%;
+height:600px;
+margin-top:30px;
+border-radius:20px;
+border:none;
+background:#000;
+"
+allow="autoplay"
+allowfullscreen>
+</iframe>
+
+
+</div>
+
+</section>
+
+<script>
+
+// klik di luar untuk tutup dropdown
+function toggleDropdown(el) {
+    const parent = el.closest('.dropdown');
+
+    document.querySelectorAll('.dropdown').forEach(item => {
+        if (item !== parent) {
+            item.classList.remove('open');
+        }
+    });
+
+    parent.classList.toggle('open');
+}
+
+document.addEventListener('click', function(e) {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+});
+
+// MENU ACTIVE
+document.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelectorAll('.menu-link').forEach(item => item.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// SCROLL KE HOME
+function goHome() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    document.querySelectorAll('.menu-link').forEach(item => item.classList.remove('active'));
+    const first = document.querySelector('.menu-link');
+    if (first) first.classList.add('active');
+}
+</script>
+<script>
+
+const counters =
+document.querySelectorAll(
+'.counter'
+);
+
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(
+entry.isIntersecting
+){
+
+let counter =
+entry.target;
+
+let target =
++counter.getAttribute(
+'data-target'
+);
+
+let count = 0;
+
+let speed =
+target / 100;
+
+
+function update(){
+
+count += speed;
+
+if(
+count < target
+){
+
+counter.innerText =
+Math.floor(count)
+.toLocaleString(
+'id-ID'
+);
+
+requestAnimationFrame(
+update
+);
+
+}else{
+
+counter.innerText =
+target.toLocaleString(
+'id-ID'
+) + "+";
+
+}
+
+}
+
+update();
+
+observer.unobserve(
+counter
+);
+
+}
+
+});
+
+},
+{
+threshold:0.4
+}
+);
+
+
+counters.forEach(
+counter=>
+observer.observe(
+counter
+)
+);
+
+</script>
+
+<script>
+
+let beritaIndex = 0;
+
+const track =
+document.getElementById(
+"newsTrack"
+);
+
+const total =
+document.querySelectorAll(
+".news-item"
+).length;
+
+const dots =
+document.getElementById(
+"newsDots"
+);
+
+
+
+for(
+let i=0;
+i<total;
+i++
+){
+
+let dot =
+document.createElement(
+"div"
+);
+
+dot.className =
+"news-dot";
+
+dot.onclick=
+()=>{
+
+beritaIndex=i;
+
+updateBerita();
+
+};
+
+dots.appendChild(
+dot
+);
+
+}
+
+
+
+function updateBerita(){
+
+track.style.transform=
+`translateX(
+-${beritaIndex*100}%)
+`;
+
+
+document
+.querySelectorAll(
+'.news-dot'
+)
+
+.forEach(
+x=>
+x.classList.remove(
+'active'
+)
+);
+
+
+document
+.querySelectorAll(
+'.news-dot'
+)
+[beritaIndex]
+.classList.add(
+'active'
+);
+}
+
+
+function geserBerita(n){
+beritaIndex += n;
+if(
+beritaIndex>=total
+)
+beritaIndex=0;
+if(
+beritaIndex<0
+)
+beritaIndex=
+total-1;
+
+updateBerita();
+}
+
+setInterval(()=>{
+geserBerita(
+1
+);
+},5000);
+updateBerita();
+
+</script>
+
+<script>
+
+let startX = 0;
+let endX = 0;
+
+const slider =
+document.querySelector('.news-slider');
+
+// Saat jari menyentuh
+slider.addEventListener(
+'touchstart',
+e=>{
+
+startX =
+e.touches[0].clientX;
+
+}
+);
+
+// Saat jari dilepas
+slider.addEventListener(
+'touchend',
+e=>{
+
+endX =
+e.changedTouches[0].clientX;
+
+handleSwipe();
+
+}
+);
+
+
+// Drag mouse desktop
+slider.addEventListener(
+'mousedown',
+e=>{
+
+startX =
+e.clientX;
+
+}
+);
+
+slider.addEventListener(
+'mouseup',
+e=>{
+
+endX =
+e.clientX;
+
+handleSwipe();
+
+}
+);
+
+
+function handleSwipe(){
+
+let jarak =
+startX - endX;
+
+
+// geser kiri
+if(jarak > 50){
+
+geserBerita(1);
+
+}
+
+
+// geser kanan
+if(jarak < -50){
+
+geserBerita(-1);
+
+}
+
+}
+
+</script>
+
+<script>
+
+
+function bukaHalaman(jenis){
+
+// sembunyikan seluruh website
+document.getElementById(
+'halamanUtama'
+).style.display='none';
+
+
+// buka halaman tujuan
+if(jenis==="foto"){
+
+document.getElementById(
+'halamanFoto'
+).style.display='block';
+
+}
+
+
+if(jenis==="video"){
+
+document.getElementById(
+'halamanVideo'
+).style.display='block';
+
+}
+
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+function kembali(){
+
+document.getElementById(
+'halamanFoto'
+).style.display='none';
+
+document.getElementById(
+'halamanVideo'
+).style.display='none';
+
+document.getElementById(
+'halamanVideoLokasi'
+).style.display='none';
+
+document.getElementById(
+'halamanUtama'
+).style.display='block';
+
+let player =
+document.getElementById(
+'playerVideo'
+);
+
+// AUTO STOP VIDEO
+if(player){
+
+player.src =
+'';
+
+player.style.display =
+'none';
+
+}
+
+document.getElementById(
+'progres'
+).scrollIntoView({
+behavior:'smooth'
+});
+
+}
+
+
+function kembaliKePilihan(){
+
+document
+.getElementById(
+'halamanLokasi'
+)
+
+.style.display=
+'none';
+
+
+
+document
+.getElementById(
+'halamanFoto'
+)
+
+.style.display=
+'block';
+
+}
+
+</script>
+
+
+
+<script>
+
+function bukaDetailFoto(url){
+
+document
+.getElementById(
+'halamanFoto'
+)
+
+.style.display=
+'none';
+
+
+document
+.getElementById(
+'detailFoto'
+)
+
+.style.display=
+'block';
+
+
+document
+.getElementById(
+'fotoBesar'
+)
+
+.src=url;
+
+
+window.scrollTo(
+0,
+0
+);
+
+}
+
+
+</script>
+
+<!-- ===========================
+HALAMAN FOTO
+=========================== -->
+
+<section id="halamanFoto"
+class="section"
+style="display:none;min-height:100vh;">
+
+<div class="container">
+
+<button
+onclick="kembali()"
+class="btn">
+
+← Kembali
+
+</button>
+
+
+<h2 class="section-title">
+
+📸 Pilih Lokasi SPPG
+
+</h2>
+
+
+<div class="grid-2">
+
+<div class="card"
+onclick="bukaLokasi('kebumen')">
+
+SPPG Kebumen
+
+</div>
+
+<div class="card"
+onclick="bukaLokasi('grogol')">
+
+SPPG Grogol Paliyan
+
+</div>
+
+<div class="card"
+onclick="bukaLokasi('wonosari')">
+
+SPPG Wonosari
+
+</div>
+
+<div class="card"
+onclick="bukaLokasi('ponjong')">
+
+SPPG Ponjong
+
+</div>
+
+<div class="card"
+onclick="bukaLokasi('semanu')">
+
+SPPG Semanu
+
+</div>
+
+
+<div class="card"
+onclick="bukaLokasi('logandeng')">
+
+SPPG Logandeng Playen
+
+</div>
+
+<div class="card"
+onclick="bukaLokasi('karangmojo')">
+
+SPPG Karangmojo
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ====================
+HALAMAN LOKASI
+==================== -->
+
+<section
+id="halamanLokasi"
+class="section"
+style="display:none;">
+
+<div class="container">
+
+<button
+onclick="kembaliKePilihan()"
+class="btn">
+
+← Kembali
+
+</button>
+
+
+<h2
+id="judulLokasi"
+class="section-title">
+
+Lokasi
+
+</h2>
+
+
+<div
+id="uploadLokasi"
+class="gallery">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ====================
+DETAIL FOTO
+==================== -->
+
+<section
+id="detailFoto"
+class="section"
+style="display:none;">
+<div class="container">
+<button
+onclick="kembaliKeGaleri()"
+class="btn">
+← Kembali
+</button>
+<img
+id="fotoBesar"
+style="
+width:100%;
+border-radius:20px;
+">
+
+<h2
+id="judulFoto"
+style="
+margin-top:25px;
+font-size:30px;
+font-weight:700;
+">
+
+</h2>
+<p
+id="ketFoto"
+style="
+margin-top:10px;
+color:#dbeafe;
+font-size:18px;
+">
+</p>
+</div>
+</section>
+
+<script>
+
+
+
+/* ===========================
+BUKA FOTO LOKASI
+=========================== */
+
+const API =
+"https://script.google.com/macros/s/AKfycbzroNpbPk04JIT4ZkSYM5cvNZiFlzP1VPEwWCSfz1SZcLojT_ACSnwVRl1dw3HVqU4/exec";
+
+async function bukaLokasi(nama){
+
+document.getElementById(
+'halamanFoto'
+).style.display='none';
+
+document.getElementById(
+'halamanLokasi'
+).style.display='block';
+
+document.getElementById(
+'judulLokasi'
+).innerHTML =
+'SPPG ' + nama;
+
+let res=
+await fetch(
+API+'?tipe=foto&lokasi='+nama
+);
+
+let data=
+await res.json();
+console.log(data);
+
+let html='';
+
+data.forEach(item=>{
+
+html+=`
+<div class="card">
+
+<img
+src="${item.url}"
+style="
+width:100%;
+height:230px;
+object-fit:cover;
+border-radius:15px;
+"
+
+onerror="
+this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'
+"
+
+onclick="
+bukaDetailFoto(
+'${item.url}',
+'${item.judul}',
+'${item.keterangan}'
+)
+"
+>
+
+<h3>${item.judul}</h3>
+
+<p>${item.keterangan}</p>
+
+</div>
+`;
+
+});
+
+document.getElementById(
+'uploadLokasi'
+).innerHTML=
+html;
+
+}
+
+
+function bukaDetailFoto(
+url,
+judul,
+keterangan
+){
+
+document.getElementById(
+'halamanLokasi'
+).style.display='none';
+
+
+document.getElementById(
+'detailFoto'
+).style.display='block';
+
+
+document.getElementById(
+'fotoBesar'
+).src=
+url;
+
+
+document.getElementById(
+'judulFoto'
+).innerHTML=
+judul;
+
+
+document.getElementById(
+'ketFoto'
+).innerHTML=
+keterangan;
+
+}
+
+
+
+
+function kembaliKeGaleri(){
+
+document.getElementById(
+'detailFoto'
+).style.display='none';
+
+
+document.getElementById(
+'halamanLokasi'
+).style.display='block';
+}
+
+
+
+/* ===========================
+BUKA VIDEO
+=========================== */
+
+async function bukaVideoLokasi(
+nama
+){
+
+document.getElementById(
+'halamanVideo'
+).style.display='none';
+
+document.getElementById(
+'halamanVideoLokasi'
+).style.display='block';
+
+
+
+let res =
+await fetch(
+
+API+
+
+'?tipe=video&lokasi='+
+
+nama
+
+);
+
+
+let data =
+await res.json();
+
+
+
+let html='';
+
+
+
+data.forEach(
+item=>{
+
+
+html += `
+
+<div
+class="card"
+
+onclick="
+putarVideo(
+'${item.url}'
+)
+"
+
+>
+
+<h3>
+
+${item.judul}
+
+</h3>
+
+
+<p>
+
+${item.keterangan}
+
+</p>
+
+</div>
+
+`;
+
+
+
+});
+
+
+document.getElementById(
+'listVideo'
+).innerHTML=
+html;
+
+}
+
+function putarVideo(
+url
+){
+
+let player =
+document.getElementById(
+'playerVideo'
+);
+
+
+player.src =
+url;
+
+
+player.style.display=
+'block';
+
+
+}
+
+</script>
+
+<script>
+
+/* ==========================
+KEMBALI DARI VIDEO LOKASI
+========================== */
+
+function kembaliVideoLokasi(){
+
+// sembunyikan halaman daftar video
+document.getElementById(
+'halamanVideoLokasi'
+).style.display='none';
+
+// tampilkan halaman pilih lokasi video
+document.getElementById(
+'halamanVideo'
+).style.display='block';
+
+// reset player
+let player =
+document.getElementById(
+'playerVideo'
+);
+
+player.pause();
+player.src='';
+player.style.display='none';
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+</script>
+<!-- ==========================
+LINK GALERI KEGIATAN
+========================== -->
+
+<section
+id="halamanGaleriKegiatan"
+class="section"
+
+style="
+display:none;
+min-height:100vh;
+">
+
+<div class="container">
+<button
+onclick="kembaliGaleriKegiatan()"
+class="btn">
+← Kembali
+</button>
+<h2 class="section-title">
+📸 Semua Dokumentasi Kegiatan
+</h2>
+
+<p class="section-subtitle">
+Semua foto kegiatan Yayasan
+</p>
+
+<div
+class="gallery">
+
+<div class="gallery">
+
+<img
+src="https://picsum.photos/700/500?11"
+onclick="bukaDetailGaleri(this.src,'kegiatan')">
+
+<img
+src="https://picsum.photos/700/500?12"
+onclick="bukaDetailGaleri(this.src,'kegiatan')">
+
+<img
+src="https://picsum.photos/700/500?13"
+onclick="bukaDetailGaleri(this.src,'kegiatan')">
+
+<img
+src="https://picsum.photos/700/500?14"
+onclick="bukaDetailGaleri(this.src,'kegiatan')">
+
+<img
+src="https://picsum.photos/700/500?15"
+onclick="bukaDetailGaleri(this.src,'kegiatan')">
+
+<img
+src="https://picsum.photos/700/500?16"
+onclick="bukaDetailGaleri(this.src,'kegiatan')">
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ==========================
+lINK MENU MBG
+========================== -->
+
+<section
+id="halamanGaleriMenu"
+class="section"
+style="
+display:none;
+min-height:100vh;
+">
+
+<div class="container">
+<button
+onclick="kembaliGaleriMenu()"
+class="btn">
+← Kembali
+</button>
+
+<h2 class="section-title">
+🍱 Semua Foto Menu MBG
+</h2>
+
+<p class="section-subtitle">
+Dokumentasi seluruh menu makanan bergizi
+</p>
+
+<div class="gallery">
+
+<img
+src="https://picsum.photos/700/500?41"
+onclick="bukaDetailGaleri(this.src,'menu')">
+
+<img
+src="https://picsum.photos/700/500?42"
+onclick="bukaDetailGaleri(this.src,'menu')">
+
+<img
+src="https://picsum.photos/700/500?43"
+onclick="bukaDetailGaleri(this.src,'menu')">
+
+</div>
+</div>
+</section>
+
+<script>
+
+function bukaGaleriKegiatan(){
+
+document.getElementById(
+'halamanUtama'
+).style.display='none';
+
+document.getElementById(
+'halamanGaleriKegiatan'
+).style.display='block';
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+}
+
+function kembaliGaleriKegiatan(){
+
+document.getElementById(
+'halamanGaleriKegiatan'
+).style.display='none';
+
+document.getElementById(
+'halamanUtama'
+).style.display='block';
+document.getElementById(
+'galeri1'
+).scrollIntoView({
+behavior:'smooth'
+});
+}
+
+</script>
+
+<script>
+
+function bukaGaleriMenu(){
+
+document.getElementById(
+'halamanUtama'
+).style.display='none';
+
+
+document.getElementById(
+'halamanGaleriMenu'
+).style.display='block';
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:'smooth'
+
+});
+
+}
+
+function kembaliGaleriMenu(){
+
+document.getElementById(
+'halamanGaleriMenu'
+).style.display='none';
+
+document.getElementById(
+'halamanUtama'
+).style.display='block';
+
+document.getElementById(
+'galeri2'
+).scrollIntoView({
+behavior:'smooth'
+});
+}
+
+</script>
+
+<!-- ==========================
+DETAIL FOTO GALERI
+========================== -->
+
+<section
+id="detailFotoGaleri"
+class="section"
+style="display:none;min-height:100vh;">
+
+<div class="container">
+
+<button
+onclick="kembaliDetailGaleri()"
+class="btn">
+← Kembali
+</button>
+
+<img
+id="fotoGaleriBesar"
+style="
+width:100%;
+max-height:80vh;
+object-fit:contain;
+border-radius:20px;
+margin-top:20px;
+">
+
+</div>
+</section>
+
+<script>
+
+let asalGaleri='';
+
+function bukaDetailGaleri(
+url,
+asal
+){
+
+asalGaleri=asal;
+
+document.getElementById(
+'halamanGaleriKegiatan'
+).style.display='none';
+
+document.getElementById(
+'halamanGaleriMenu'
+).style.display='none';
+
+document.getElementById(
+'detailFotoGaleri'
+).style.display='block';
+
+document.getElementById(
+'fotoGaleriBesar'
+).src=url;
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+}
+
+function kembaliDetailGaleri(){
+
+document.getElementById(
+'detailFotoGaleri'
+).style.display='none';
+
+if(
+asalGaleri==='kegiatan'
+){
+
+document.getElementById(
+'halamanGaleriKegiatan'
+).style.display='block';
+}
+
+if(
+asalGaleri==='menu'
+){
+
+document.getElementById(
+'halamanGaleriMenu'
+).style.display='block';
+}
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+}
+
+</script>
+
+<!-- ==========================
+POPUP PILIH WA PREMIUM
+========================== -->
+
+<style>
+
+/* overlay */
+#popupWA{
+position:fixed;
+inset:0;
+background:
+rgba(0,0,0,.65);
+
+display:none;
+justify-content:center;
+align-items:center;
+
+backdrop-filter:
+blur(8px);
+
+z-index:99999;
+
+animation:
+fadeIn .35s ease;
+}
+
+
+/* BOX */
+.popup-box{
+
+background:
+linear-gradient(
+145deg,
+#132238,
+#1d3557
+);
+
+padding:30px;
+
+border-radius:25px;
+
+width:330px;
+
+text-align:center;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.45);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+animation:
+popupMasuk .4s ease;
+
+position:relative;
+
+overflow:hidden;
+}
+
+
+/* efek glow */
+.popup-box::before{
+
+content:'';
+
+position:absolute;
+
+width:200px;
+height:200px;
+
+background:
+radial-gradient(
+circle,
+rgba(255,152,0,.25),
+transparent
+);
+
+top:-80px;
+right:-80px;
+
+animation:
+putar 8s linear infinite;
+}
+
+
+/* JUDUL */
+.popup-box h3{
+
+font-size:24px;
+
+font-weight:800;
+
+margin-bottom:25px;
+
+color:#fff;
+
+}
+
+
+/* TOMBOL WA */
+.wa-card{
+
+display:block;
+
+padding:16px;
+
+margin-bottom:15px;
+
+background:
+linear-gradient(
+135deg,
+#132238,
+#128C7E
+);
+
+border-radius:16px;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+0 10px 25px rgba(37,211,102,.25);
+
+}
+
+
+/* shine */
+.wa-card::before{
+
+content:'';
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+
+transition:.5s;
+}
+
+.wa-card:hover::before{
+left:100%;
+}
+
+
+.wa-card:hover{
+
+transform:
+translateY(-6px)
+scale(1.03);
+
+box-shadow:
+0 20px 35px rgba(37,211,102,.35);
+
+}
+
+
+/* tombol tutup */
+.btnTutup{
+
+margin-top:15px;
+
+padding:12px 30px;
+
+border:none;
+
+border-radius:12px;
+
+background:
+linear-gradient(
+135deg,
+#ff3d3d,
+#ff6b00
+);
+
+color:white;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+
+.btnTutup:hover{
+
+transform:
+scale(1.06);
+
+}
+
+
+/* animasi */
+@keyframes popupMasuk{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(30px)
+scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+
+}
+
+}
+
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+
+@keyframes goyang{
+
+0%{
+transform:rotate(0);
+}
+
+20%{
+transform:rotate(-10deg);
+}
+
+40%{
+transform:rotate(10deg);
+}
+
+60%{
+transform:rotate(-10deg);
+}
+
+100%{
+transform:rotate(0);
+}
+
+}
+
+
+@keyframes putar{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+</style>
+
+
+<div id="popupWA">
+
+<div class="popup-box">
+
+<h3>
+Hubungi Kami
+</h3>
+
+
+<a
+href="https://wa.me/6285181309503"
+target="_blank"
+class="wa-card">
+
+</span>
+
+ILHAM
+
+<br>
+
+<small>
+0851 8130 9503
+</small>
+
+</a>
+
+
+
+<a
+href="https://wa.me/6281804048788"
+target="_blank"
+class="wa-card">
+
+</span>
+BAMBANG
+<br>
+
+<small>
+0818 0404 8788
+</small>
+
+</a>
+
+<button
+onclick="tutupWA()"
+class="btnTutup">
+
+✕ Tutup
+
+</button>
+
+</div>
+</div>
+
+<script>
+
+function bukaWA(){
+
+let popup =
+document.getElementById(
+'popupWA'
+);
+
+popup.style.display=
+'flex';
+}
+
+function tutupWA(){
+
+let popup =
+document.getElementById(
+'popupWA'
+);
+
+popup.style.display=
+'none';
+}
+
+/* klik area luar = tutup */
+document
+.getElementById(
+'popupWA'
+)
+.addEventListener(
+'click',
+
+function(e){
+if(
+e.target.id==='popupWA'
+){
+tutupWA();
+}
+});
+
+</script>
+
+</body>
+</html>
