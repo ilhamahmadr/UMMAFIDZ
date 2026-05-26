@@ -1700,6 +1700,86 @@ color:
 
 }
 
+/* =====================================
+FIX TOUCH MOBILE & BUTTON CLICK
+TIDAK MERUSAK TAMPILAN
+===================================== */
+
+/* semua section overlay tidak boleh blok klik */
+.section::before{
+pointer-events:none;
+z-index:0;
+}
+
+/* semua isi section berada di atas overlay */
+.section > *{
+position:relative;
+z-index:1;
+}
+
+/* glow popup tidak blok klik */
+.popup-box::before{
+pointer-events:none;
+}
+
+/* semua overlay dekorasi tidak blok sentuhan */
+.video-wrapper::after,
+.video-thumb::before{
+pointer-events:none;
+}
+
+/* fix tombol mobile */
+button,
+.btn,
+a,
+.card,
+img,
+.video-card,
+.social-icon,
+.news-btn{
+-webkit-tap-highlight-color:transparent;
+touch-action:manipulation;
+}
+
+/* pastikan card bisa dipencet */
+.card,
+.video-card,
+.btn,
+.social-icon{
+position:relative;
+z-index:5;
+}
+
+/* fix khusus mobile */
+@media(max-width:768px){
+
+button,
+.btn,
+a,
+.card,
+.video-card,
+.social-icon,
+img{
+pointer-events:auto !important;
+}
+
+body{
+overflow-x:hidden;
+}
+
+/* cegah layer aneh menimpa */
+.section,
+.container,
+.gallery,
+.grid-2,
+.grid-3,
+.grid-4{
+position:relative;
+z-index:1;
+}
+
+}
+      
 </style>
 
 </head>
