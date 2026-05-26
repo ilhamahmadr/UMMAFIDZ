@@ -1948,7 +1948,7 @@ display:none;
 }
 
 }
-      
+
 </style>
 
 </head>
@@ -4053,35 +4053,30 @@ tutupLoading();
 function putarVideo(url){
 
 let player =
-document.getElementById(
-'playerVideo'
-);
+document.getElementById('playerVideo');
 
-
-// Ambil ID Google Drive
 let cocok =
 url.match(/\/d\/(.*?)\//);
 
 if(cocok){
 
-let id =
-cocok[1];
+let id = cocok[1];
 
 url =
 `https://drive.google.com/file/d/${id}/preview`;
 
 }
 
-
-// tampilkan video
-player.src =
-url;
-
-player.style.display =
-'block';
+player.src = url;
+player.style.display = 'block';
 
 
-// scroll ke player
+/* sembunyikan daftar video */
+document.getElementById(
+'listVideo'
+).style.display='none';
+
+
 player.scrollIntoView({
 behavior:'smooth'
 });
