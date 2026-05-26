@@ -1780,6 +1780,167 @@ z-index:1;
 
 }
 
+/* ==========================
+ZOOM FOTO FULLSCREEN
+========================== */
+
+#popupZoomFoto{
+position:fixed;
+inset:0;
+background:
+rgba(0,0,0,.92);
+
+display:none;
+justify-content:center;
+align-items:center;
+
+z-index:999999;
+
+backdrop-filter:
+blur(10px);
+
+animation:
+fadeZoom .25s ease;
+}
+
+
+#popupZoomFoto img{
+
+max-width:92%;
+max-height:90vh;
+
+border-radius:20px;
+
+box-shadow:
+0 25px 60px rgba(
+0,
+0,
+0,
+.5
+);
+
+animation:
+zoomFoto .25s ease;
+
+object-fit:
+contain;
+}
+
+
+/* tombol close */
+
+#closeZoom{
+
+position:absolute;
+
+top:25px;
+right:25px;
+
+font-size:45px;
+
+color:white;
+
+cursor:pointer;
+
+font-weight:700;
+
+transition:.3s;
+}
+
+
+#closeZoom:hover{
+
+transform:
+rotate(90deg);
+
+color:#ff9800;
+
+}
+
+
+/* animasi */
+
+@keyframes fadeZoom{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+
+@keyframes zoomFoto{
+
+from{
+
+transform:
+scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:
+scale(1);
+
+opacity:1;
+
+}
+
+}
+
+
+/* mobile */
+
+@media(max-width:768px){
+
+#popupZoomFoto img{
+
+max-width:95%;
+max-height:80vh;
+
+border-radius:14px;
+
+}
+
+#closeZoom{
+
+font-size:36px;
+top:18px;
+right:18px;
+
+}
+
+}
+
+@keyframes zoomFoto{
+
+from{
+
+opacity:0;
+
+transform:
+scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+scale(1);
+
+}
+
+}
+
 </style>
 
 </head>
@@ -2658,11 +2819,14 @@ Dokumentasi kegiatan Yayasan
 
 <div class="gallery">
 <img
-src="https://picsum.photos/700/500?1">
+src="https://picsum.photos/700/500?11"
+onclick="bukaDetailGaleri(this.src,'kegiatan')">
 <img
-src="https://picsum.photos/700/500?2">
+src="https://picsum.photos/700/500?11"
+onclick="bukaDetailGaleri(this.src,'kegiatan')">
 <img
-src="https://picsum.photos/700/500?3">
+src="https://picsum.photos/700/500?11"
+onclick="bukaDetailGaleri(this.src,'kegiatan')">
 </div>
 
 <!-- TOMBOL -->
@@ -2694,12 +2858,15 @@ Dokumentasi Menu Makanan Bergizi Gratis
 </p>
 
 <div class="gallery">
-
-<img src="https://picsum.photos/700/500?31">
-
-<img src="https://picsum.photos/700/500?32">
-
-<img src="https://picsum.photos/700/500?33">
+<img
+src="https://picsum.photos/700/500?41"
+onclick="bukaDetailGaleri(this.src,'menu')">
+<img
+src="https://picsum.photos/700/500?41"
+onclick="bukaDetailGaleri(this.src,'menu')">
+<img
+src="https://picsum.photos/700/500?41"
+onclick="bukaDetailGaleri(this.src,'menu')">
 
 </div>
 <div style="
@@ -4133,31 +4300,126 @@ behavior:'smooth'
 DETAIL FOTO GALERI
 ========================== -->
 
+<!-- ==========================
+ZOOM FOTO GALERI
+========================== -->
+
 <section
 id="detailFotoGaleri"
-class="section"
-style="display:none;min-height:100vh;">
 
-<div class="container">
+onclick="
+kembaliDetailGaleri()
+"
 
-<button
-onclick="kembaliDetailGaleri()"
-class="btn">
-Kembali
-</button>
-
-<img
-id="fotoGaleriBesar"
 style="
-width:100%;
-max-height:80vh;
-object-fit:contain;
-border-radius:20px;
-margin-top:20px;
+
+display:none;
+
+position:fixed;
+inset:0;
+
+background:
+rgba(0,0,0,.95);
+
+justify-content:center;
+align-items:center;
+
+z-index:999999;
+
+backdrop-filter:
+blur(10px);
+
 ">
 
-</div>
+<span
+
+onclick="
+kembaliDetailGaleri()
+"
+
+style="
+
+position:absolute;
+top:25px;
+right:30px;
+
+font-size:45px;
+color:white;
+cursor:pointer;
+
+">
+
+×
+
+</span>
+
+
+<img
+
+id="fotoGaleriBesar"
+
+onclick="
+event.stopPropagation()
+"
+
+style="
+
+max-width:95%;
+max-height:90vh;
+
+border-radius:20px;
+
+object-fit:
+contain;
+
+animation:
+zoomFoto .25s ease;
+
+">
+
 </section>
+
+
+<script>
+
+function bukaDetailGaleri(
+url,
+asal
+){
+
+document.getElementById(
+'detailFotoGaleri'
+).style.display =
+'flex';
+
+
+document.getElementById(
+'fotoGaleriBesar'
+).src =
+url;
+
+
+document.body.style.overflow =
+'hidden';
+
+}
+
+
+
+function kembaliDetailGaleri(){
+
+document.getElementById(
+'detailFotoGaleri'
+).style.display =
+'none';
+
+
+document.body.style.overflow =
+'';
+
+}
+
+</script>
 
 <script>
 
@@ -4168,60 +4430,32 @@ url,
 asal
 ){
 
-asalGaleri=asal;
+asalGaleri =
+asal;
 
-document.getElementById(
-'halamanGaleriKegiatan'
-).style.display='none';
 
-document.getElementById(
-'halamanGaleriMenu'
-).style.display='none';
-
+/* tampilkan popup */
 document.getElementById(
 'detailFotoGaleri'
-).style.display='block';
+).style.display =
+'flex';
+
 
 document.getElementById(
 'fotoGaleriBesar'
-).src=url;
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
+).src =
+url;
+
+
+/* lock scroll */
+document.body.style.overflow =
+'hidden';
+
 }
 
-function kembaliDetailGaleri(){
-
-document.getElementById(
-'detailFotoGaleri'
-).style.display='none';
-
-if(
-asalGaleri==='kegiatan'
-){
-
-document.getElementById(
-'halamanGaleriKegiatan'
-).style.display='block';
-}
-
-if(
-asalGaleri==='menu'
-){
-
-document.getElementById(
-'halamanGaleriMenu'
-).style.display='block';
-}
-
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
-}
 
 </script>
+
 
 <!-- ==========================
 POPUP PILIH WA PREMIUM
@@ -5244,6 +5478,67 @@ document.getElementById(
 "loadingSPPG"
 ).style.display=
 "none";
+
+}
+
+</script>
+
+<!-- ======================
+POPUP ZOOM FOTO
+====================== -->
+
+<div
+id="popupZoomFoto"
+onclick="tutupZoomFoto()">
+
+<span
+id="closeZoom">
+
+×
+
+</span>
+
+<img
+id="zoomFotoIsi"
+
+onclick="event.stopPropagation()">
+
+</div>
+
+<script>
+
+/* buka zoom */
+
+function bukaZoomFoto(src){
+
+document.getElementById(
+'popupZoomFoto'
+).style.display =
+'flex';
+
+
+document.getElementById(
+'zoomFotoIsi'
+).src =
+src;
+
+document.body.style.overflow =
+'hidden';
+
+}
+
+
+/* tutup */
+
+function tutupZoomFoto(){
+
+document.getElementById(
+'popupZoomFoto'
+).style.display =
+'none';
+
+document.body.style.overflow =
+'';
 
 }
 
