@@ -372,25 +372,49 @@ gap:20px;
 }
 
 .gallery img{
+
 width:100%;
-height:220px;
+height:240px;
+
 object-fit:cover;
-border-radius:16px;
+
+border-radius:20px;
+
 cursor:pointer;
-transition:.3s;
+
+transition:
+transform .35s,
+box-shadow .35s;
+
 border:
-2px solid rgba(255,255,255,.08);
+2px solid rgba(
+255,
+255,
+255,
+.08
+);
+
 }
 
 
 .gallery img:hover{
+
 transform:
 scale(1.04);
+
 border-color:
 #ff9800;
+
 box-shadow:
-0 12px 30px rgba(255,140,0,.2);
+0 15px 35px rgba(
+255,
+152,
+0,
+.2
+);
+
 }
+
 
 /* =========================
 NEWS SLIDER
@@ -695,33 +719,6 @@ width:94%;
 
 }
 
-/* =========================
-PLAYER VIDEO PREMIUM
-========================= */
-
-#playerVideo{
-
-width:100%;
-height:600px;
-
-border:none;
-border-radius:25px;
-
-background:#000;
-
-overflow:hidden;
-
-box-shadow:
-0 20px 50px rgba(0,0,0,.45),
-0 0 30px rgba(255,152,0,.15);
-
-border:
-2px solid rgba(255,255,255,.08);
-
-transition:
-all .35s ease;
-
-}
 
 
 /* efek hover */
@@ -771,6 +768,7 @@ scale(1);
 }
 
 }
+
 
 
 .news-dots{
@@ -1257,26 +1255,22 @@ padding:
 }
 
 /* ==========================
-PLAYER VIDEO PREMIUM FIX
+PLAYER VIDEO
 ========================== */
 
-.video-wrapper{
+#playerVideo{
 
-position:relative;
 width:100%;
-overflow:hidden;
+height:600px;
 
+display:block;
+
+border:none;
 border-radius:25px;
 
-background:
-linear-gradient(
-145deg,
-#111827,
-#0f172a
-);
+background:#000;
 
-border:
-2px solid rgba(255,255,255,.08);
+overflow:hidden;
 
 box-shadow:
 0 20px 50px rgba(0,0,0,.45);
@@ -1287,75 +1281,46 @@ transition:.35s;
 
 
 /* hover */
-.video-wrapper:hover{
+#playerVideo:hover{
 
 transform:
-translateY(-5px);
+translateY(-4px);
 
 box-shadow:
-0 25px 60px rgba(
-255,
-152,
-0,
-.25
-);
-
-border-color:
-rgba(
-255,
-152,
-0,
-.35
-);
+0 25px 60px rgba(0,0,0,.5);
 
 }
 
 
-/* FIX VIDEO MOBILE */
-#playerVideo{
-width:100%;
-height:600px;
-border:none;
-display:block;
-background:#000;
-border-radius:25px;
-overflow:hidden;
-
--webkit-transform:translateZ(0);
-transform:translateZ(0);
-
-}
-
-/* MOBILE */
+/* mobile */
 @media(max-width:768px){
 
 #playerVideo{
 
-height:220px;
-border-radius:14px;
-
-/* penting */
-aspect-ratio:16/9;
-
-/* cegah zoom aneh */
-max-width:100%;
+height:240px;
+border-radius:18px;
 
 }
 
-.video-wrapper{
-
-overflow:hidden;
-border-radius:14px;
-
 }
 
-/* hilangkan padding aneh */
-iframe{
 
-margin:0;
-padding:0;
+/* iframe video */
+#playerVideo{
 
-}
+width:100%;
+height:600px;
+
+border:none;
+
+display:block;
+
+background:#000;
+
+border-radius:25px;
+
+position:relative;
+z-index:2;
 
 }
 
@@ -1550,6 +1515,16 @@ box-shadow:
 }
 
 
+/* mobile */
+@media(max-width:768px){
+
+#playerVideo{
+
+height:240px;
+
+border-radius:18px;
+
+}
 
 .video-play{
 
@@ -1948,6 +1923,92 @@ scale(1);
 
 }
 
+/* =========================
+SCROLL RELAWAN
+========================= */
+
+#listRelawan{
+
+scrollbar-width:thin;
+scrollbar-color:#ff9800 transparent;
+
+}
+
+#listRelawan::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+#listRelawan::-webkit-scrollbar-thumb{
+
+background:#ff9800;
+border-radius:20px;
+
+}
+
+#listRelawan::-webkit-scrollbar-track{
+
+background:transparent;
+
+}
+
+/* =========================
+SCROLL DATA RELAWAN
+========================= */
+
+#listRelawan{
+
+height:70vh;
+overflow-y:auto;
+overflow-x:hidden;
+padding:5px 10px 20px;
+
+scrollbar-width:thin;
+scrollbar-color:#ff9800 transparent;
+
+}
+
+
+
+/* SCROLL CHROME */
+
+#listRelawan::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+#listRelawan::-webkit-scrollbar-thumb{
+
+background:#ff9800;
+border-radius:20px;
+
+}
+
+#listRelawan::-webkit-scrollbar-track{
+
+background:transparent;
+
+}
+
+
+
+/* CARD RELAWAN */
+
+#listRelawan .card{
+
+min-height:auto;
+height:auto;
+
+}
+
+#listRelawan{
+
+scroll-behavior:smooth;
+
+}
+
 </style>
 
 </head>
@@ -2227,21 +2288,59 @@ polygon(
 
 <div class="ticker">
 
+<span style="
+display:flex;
+align-items:center;
+gap:18px;
+font-weight:600;
+letter-spacing:.3px;
+">
+
 <span>
-• Yayasan Ummafidz Amal Sejahtera mendukung Program Makan Bergizi Gratis Nasional |
-• Distribusi makanan sehat, halal & bergizi untuk anak Indonesia |
-• Bersama membangun generasi sehat, cerdas, dan berakhlak |
-• Transparansi | • Profesional | • Amanah |
+➜ Yayasan Ummafidz Amal Sejahtera mendukung Program Makan Bergizi Gratis Nasional
 </span>
 
 <span>
-• Yayasan Ummafidz Amal Sejahtera mendukung Program Makan Bergizi Gratis Nasional |
-• Distribusi makanan sehat, halal & bergizi untuk anak Indonesia |
-• Bersama membangun generasi sehat, cerdas, dan berakhlak |
-• Transparansi | • Profesional | • Amanah |
+➜ Menyalurkan makanan sehat, halal, dan bergizi untuk generasi Indonesia
 </span>
 
-</div>
+<span>
+➜ Bersama menciptakan anak bangsa yang sehat, cerdas, dan berkarakter
+</span>
+
+<span>
+➜ Amanah • Profesional • Transparan • Peduli Sosial
+</span>
+
+</span>
+
+<span style="
+display:flex;
+align-items:center;
+gap:18px;
+font-weight:600;
+letter-spacing:.3px;
+">
+
+<span>
+➜ Yayasan Ummafidz Amal Sejahtera mendukung Program Makan Bergizi Gratis Nasional
+</span>
+
+<span>
+➜ Menyalurkan makanan sehat, halal, dan bergizi untuk generasi Indonesia
+</span>
+
+<span>
+➜ Bersama menciptakan anak bangsa yang sehat, cerdas, dan berkarakter
+</span>
+
+<span>
+➜ Amanah • Profesional • Transparan • Peduli Sosial
+</span>
+
+</span>
+
+</span>
 
 </div>
 </nav>
@@ -2350,6 +2449,7 @@ setInterval(updateDateTime, 1000);
     <a href="#galeri1" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Galeri kegiatan</a>
     <a href="#galeri2" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Galeri Menu</a>
     <a href="#progres" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Progres Pembangunan SPPG</a>
+    <a href="#"onclick="bukaRelawan()"style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Profil Relawan SPPG</a>
     <a href="#kontak" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Kontak Kami</a>
     <a href="#tentang" onclick="closeMobileMenu()" style="display:block;padding:16px 22px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);">Tentang Kami</a>
     
@@ -2501,7 +2601,7 @@ dalam mendukung kesejahteraan masyarakat.
 font-size:50px;
 margin-bottom:15px;
 ">
-🎯
+
 </div>
 <h3 style="
 font-size:28px;
@@ -2529,7 +2629,6 @@ pendidikan, serta kesejahteraan masyarakat.
 font-size:50px;
 margin-bottom:15px;
 ">
-🚀
 </div>
 <h3 style="
 font-size:28px;
@@ -2713,17 +2812,44 @@ Laporan keuangan
     <div class="container">
         <h2 class="section-title">Pertanyaan Umum (FAQ)</h2>
         <div class="card space-y-6">
-            <div>
-                <h3 class="font-bold">Apa itu Program MBG?</h3>
-                <p>Program Makan Bergizi Gratis untuk mendukung pemenuhan gizi anak Indonesia.</p>
-            </div>
-            <div>
-                <h3 class="font-bold">Siapa penerima manfaat?</h3>
-                <p>Anak sekolah dan kelompok sasaran yang ditetapkan pemerintah.</p>
-            </div>
-            <div>
-                <p>Anda dapat menghubungi kami melalui WhatsApp atau transfer bank.</p>
-            </div>
+            <div class="space-y-6">
+    <div>
+        <h3 class="font-bold">Apa itu Program MBG?</h3>
+        <p>Program Makan Bergizi Gratis untuk mendukung pemenuhan gizi anak Indonesia.</p>
+    </div>
+    <div>
+        <h3 class="font-bold">Siapa penerima manfaat?</h3>
+        <p>Anak sekolah dan kelompok sasaran yang ditetapkan pemerintah.</p>
+    </div>
+    <div>
+        <h3 class="font-bold">Apa tujuan utama Program MBG?</h3>
+        <p>Meningkatkan kualitas gizi, kesehatan, dan konsentrasi belajar anak Indonesia.</p>
+    </div>
+    <div>
+        <h3 class="font-bold">Apakah makanan diberikan setiap hari?</h3>
+        <p>Distribusi makanan dilakukan sesuai jadwal yang telah ditetapkan oleh penyelenggara daerah.</p>
+    </div>
+    <div>
+        <h3 class="font-bold">Siapa yang menyediakan makanan?</h3>
+        <p>Makanan disiapkan oleh dapur atau mitra resmi yang telah memenuhi standar kebersihan dan gizi.</p>
+    </div>
+    <div>
+        <h3 class="font-bold">Bagaimana kualitas makanan dijaga?</h3>
+        <p>Setiap menu melalui pengawasan kebersihan, kualitas bahan, dan standar gizi sebelum didistribusikan.</p>
+    </div>    <div>
+        <h3 class="font-bold">Apakah menu makanan selalu sama?</h3>
+        <p>Tidak. Menu makanan dibuat bervariasi agar kebutuhan gizi tetap seimbang dan anak tidak bosan.</p>
+    </div>
+    <div>
+        <h3 class="font-bold">Bagaimana jika ada kendala distribusi?</h3>
+        <p>Kendala dapat dilaporkan kepada admin SPPG untuk segera ditindaklanjuti.</p>
+    </div>
+    <div>
+        <h3 class="font-bold">Apakah orang tua bisa memantau program?</h3>
+        <p>Ya. Orang tua dapat memantau pelaksanaan program melalui sekolah atau sistem laporan yang tersedia.</p>
+    </div>
+
+</div>
         </div>
     </div>
 </section>
@@ -2771,43 +2897,66 @@ Laporan keuangan
     </div>
 </section>
 
-<!-- =========================
-Informasi MBG 
-========================= -->
-<section id="informasi" class="section">
-<div class="container">
+<div class="info-card" style="
+background:
+rgba(255,255,255,.06);
 
-<h2 class="section-title">
-Informasi
-</h2>
+border:
+1px solid rgba(255,255,255,.08);
 
-<p class="section-subtitle">
-Segala Informasi
-</p>
+backdrop-filter:
+blur(14px);
 
-<div class="gallery">
+border-radius:24px;
 
-<div class="info-card">
+overflow:hidden;
+
+color:white;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.25);
+
+transition:.35s;
+">
 
 <img
 src="https://picsum.photos/700/500?31"
-alt="Kegiatan MBG">
-<div class="caption">
-<h3>Pembagian menu bergizi kepada penerima manfaat
-di wilayah sekitar.</h3>
-<p>
-Dibuka kesempatan menjadi relawan untuk mendukung pelaksanaan program Satuan Pelayanan Pemenuhan Gizi (SPPG).
- Mari berkontribusi dalam pelayanan dan pemberdayaan masyarakat
+alt="Kegiatan MBG"
+style="
+width:100%;
+height:260px;
+object-fit:cover;
+">
+
+<div class="caption" style="padding:25px;">
+
+<h3 style="
+font-size:24px;
+font-weight:700;
+line-height:1.5;
+margin-bottom:12px;
+color:#fff;
+">
+Pembagian menu bergizi untuk penerima manfaat di wilayah sekitar.
+</h3>
+
+<p style="
+color:#dbeafe;
+line-height:1.8;
+margin-bottom:14px;
+">
+Dibuka kesempatan menjadi relawan SPPG untuk mendukung pelayanan dan pemberdayaan masyarakat.
 </p>
 
-<small>
+<small style="
+color:#ffcc70;
+font-weight:600;
+">
 Tanggal: 25 Mei 2026
 </small>
+
 </div>
 </div>
-</div>
-</div>
-</section>
 
 <!-- =========================
 GALERI KEGIATAN (SAMPLE)
@@ -3082,7 +3231,7 @@ Lokasi Video SPPG
 <div class="card"
 onclick="bukaVideoLokasi('kebumen')">
 
-Video SPPG Kebumen
+Video SPPG Tamanwinangun, Kebumen
 
 </div>
 
@@ -3674,7 +3823,7 @@ Pilih Lokasi SPPG
 <div class="card"
 onclick="bukaLokasi('kebumen')">
 
-SPPG Kebumen
+SPPG Tamanwinangun, Kebumen
 
 </div>
 
@@ -4067,7 +4216,7 @@ let id =
 cocok[1];
 
 url =
-`https://drive.google.com/file/d/${id}/preview?usp=drivesdk`;
+`https://drive.google.com/file/d/${id}/preview`;
 
 }
 
@@ -5534,7 +5683,6 @@ document.body.style.overflow =
 
 }
 
-
 /* tutup */
 
 function tutupZoomFoto(){
@@ -5546,6 +5694,455 @@ document.getElementById(
 
 document.body.style.overflow =
 '';
+
+}
+
+</script>
+
+<!-- =========================
+HALAMAN PASSWORD RELAWAN
+========================= -->
+
+<section
+id="halamanPassword"
+class="section"
+style="display:none;min-height:100vh;"
+>
+
+<div class="container">
+
+<button
+onclick="kembaliRelawan()"
+class="btn">
+Kembali
+</button>
+
+<h2 class="section-title">
+Profil Relawan SPPG
+</h2>
+
+<div class="card"
+style="
+max-width:500px;
+margin:auto;
+text-align:center;
+">
+
+<input
+type="password"
+id="inputPassword"
+placeholder="Masukkan Password"
+style="
+width:100%;
+padding:16px;
+border:none;
+border-radius:14px;
+margin-bottom:20px;
+font-size:18px;
+"
+>
+
+<button
+onclick="cekPassword()"
+class="btn"
+style="width:100%;">
+Masuk
+</button>
+
+<p
+id="errorPassword"
+style="
+margin-top:15px;
+color:#ff6b6b;
+display:none;
+">
+Password Salah
+</p>
+
+</div>
+</div>
+</section>
+
+<!-- =========================
+PILIH LOKASI RELAWAN
+========================= -->
+
+<section
+id="halamanRelawan"
+class="section"
+style="display:none;min-height:100vh;"
+>
+
+<div class="container">
+
+<button
+onclick="kembaliPassword()"
+class="btn">
+Kembali
+</button>
+
+<h2 class="section-title">
+Pilih SPPG
+</h2>
+
+<div class="grid-2">
+
+<div class="card" onclick="bukaDataRelawan('Kebumen')">
+SPPG Tamanwinangun, Kebumen
+</div>
+
+<div class="card" onclick="bukaDataRelawan('Grogol')">
+SPPG Grogol Paliyan
+</div>
+
+<div class="card" onclick="bukaDataRelawan('Wonosari')">
+SPPG Wonosari
+</div>
+
+<div class="card" onclick="bukaDataRelawan('Ponjong')">
+SPPG Ponjong
+</div>
+
+<div class="card" onclick="bukaDataRelawan('Semanu')">
+SPPG Semanu
+</div>
+
+<div class="card" onclick="bukaDataRelawan('Logandeng')">
+SPPG Logandeng Playen
+</div>
+
+<div class="card" onclick="bukaDataRelawan('Karangmojo')">
+SPPG Karangmojo
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- =========================
+DATA RELAWAN
+========================= -->
+
+<section
+id="halamanDataRelawan"
+style="
+display:none;
+height:100vh;
+overflow:hidden;
+"
+>
+
+<div class="container">
+
+<button
+onclick="kembaliPilihRelawan()"
+class="btn">
+Kembali
+</button>
+
+<h2
+id="judulRelawan"
+class="section-title">
+Data Relawan
+</h2>
+
+<div
+id="listRelawan"
+class="grid-3"
+style="
+height:70vh;
+overflow-y:auto;
+overflow-x:hidden;
+padding-right:10px;
+display:grid;
+gap:25px;
+align-items:start;
+">
+</div>
+
+</div>
+</section>
+
+<script>
+
+const API_RELAWAN =
+"https://script.google.com/macros/s/AKfycbxHmV0Hs0thcvX1ydWkuo_oW1gscR556tDueAKCIUmw0Tz30FbH9TZ6Dic85N1cUY8NCQ/exec";
+
+
+
+// =========================
+// BUKA PASSWORD
+// =========================
+
+function bukaRelawan(){
+
+document.getElementById(
+'halamanUtama'
+).style.display='none';
+
+document.getElementById(
+'halamanPassword'
+).style.display='block';
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+
+
+// =========================
+// KEMBALI
+// =========================
+
+function kembaliRelawan(){
+
+document.getElementById(
+'halamanPassword'
+).style.display='none';
+
+document.getElementById(
+'halamanUtama'
+).style.display='block';
+
+}
+
+
+
+function kembaliPassword(){
+
+document.getElementById(
+'halamanRelawan'
+).style.display='none';
+
+document.getElementById(
+'halamanPassword'
+).style.display='block';
+
+}
+
+
+
+function kembaliPilihRelawan(){
+
+document.getElementById(
+'halamanDataRelawan'
+).style.display='none';
+
+document.getElementById(
+'halamanRelawan'
+).style.display='block';
+
+}
+
+
+
+// =========================
+// CEK PASSWORD
+// =========================
+
+async function cekPassword(){
+
+const input =
+document.getElementById(
+'inputPassword'
+).value;
+
+const res =
+await fetch(
+API_RELAWAN + '?tipe=password'
+);
+
+const data =
+await res.json();
+
+if(input == data.password){
+
+document.getElementById(
+'halamanPassword'
+).style.display='none';
+
+document.getElementById(
+'halamanRelawan'
+).style.display='block';
+
+}else{
+
+document.getElementById(
+'errorPassword'
+).style.display='block';
+
+}
+
+}
+
+
+
+// =========================
+// AMBIL DATA RELAWAN
+// =========================
+
+async function bukaDataRelawan(lokasi){
+
+document.getElementById(
+'halamanRelawan'
+).style.display='none';
+
+document.getElementById(
+'halamanDataRelawan'
+).style.display='block';
+
+document.getElementById(
+'judulRelawan'
+).innerHTML =
+'SPPG ' + lokasi;
+
+const res =
+await fetch(
+API_RELAWAN + '?lokasi=' + lokasi
+);
+
+const data =
+await res.json();
+
+let html = '';
+
+data.forEach(item=>{
+
+html += `
+<div class="card">
+
+<img
+src="${item.foto}"
+
+onclick="
+bukaZoomRelawan(
+'${item.foto}'
+)
+"
+
+style="
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:18px;
+margin-bottom:15px;
+cursor:pointer;
+transition:.3s;
+"
+
+onmouseover="
+this.style.transform='scale(1.03)'
+"
+
+onmouseout="
+this.style.transform='scale(1)'
+"
+>
+
+<h3 style="
+font-size:24px;
+margin-bottom:10px;
+">
+${item.nama}
+</h3>
+
+<p><b>Umur:</b> ${item.umur}</p>
+
+<p><b>Jenis Kelamin:</b> ${item.jk}</p>
+
+<p><b>Alamat:</b> ${item.alamat}</p>
+
+<p><b>No HP:</b> ${item.hp}</p>
+
+</div>
+`;
+
+});
+
+document.getElementById(
+'listRelawan'
+).innerHTML =
+html;
+
+}
+
+</script>
+
+<!-- =========================
+ZOOM FOTO RELAWAN
+========================= -->
+
+<div
+id="zoomRelawan"
+onclick="tutupZoomRelawan()"
+style="
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.94);
+z-index:999999;
+justify-content:center;
+align-items:center;
+backdrop-filter:blur(8px);
+animation:fadeZoom .25s ease;
+">
+
+<span
+onclick="tutupZoomRelawan()"
+style="
+position:absolute;
+top:20px;
+right:30px;
+font-size:45px;
+font-weight:700;
+color:white;
+cursor:pointer;
+z-index:2;
+">
+×
+</span>
+
+<img
+id="fotoZoomRelawan"
+style="
+max-width:95%;
+max-height:90vh;
+border-radius:20px;
+object-fit:contain;
+animation:zoomFoto .25s ease;
+box-shadow:0 20px 50px rgba(0,0,0,.45);
+"
+>
+
+</div>
+
+<script>
+
+function bukaZoomRelawan(url){
+
+document.getElementById(
+'zoomRelawan'
+).style.display='flex';
+
+document.getElementById(
+'fotoZoomRelawan'
+).src=url;
+
+document.body.style.overflow='hidden';
+
+}
+
+function tutupZoomRelawan(){
+
+document.getElementById(
+'zoomRelawan'
+).style.display='none';
+
+document.body.style.overflow='';
 
 }
 
